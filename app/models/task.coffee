@@ -9,7 +9,7 @@ class Task extends Spine.Model
     @select ( (item) -> !item.done )
 
   @done: ->
-    @select ( (item) -> item.done )
+    @select ( (item) -> !!item.done )
 
   @destroyDone: ->
     item.destroy() for item in @done()
